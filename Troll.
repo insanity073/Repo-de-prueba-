@@ -1,4 +1,4 @@
-<!DOCTYPE index.html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -168,7 +168,8 @@
             </p>
             
             <p class="message">
-                De parte de ins'nity para ti:  "jodete, fuck You, Пошёл ты нахуй" sin ofender 
+                De parte de ins'nity para ti:  "jodete, fuck You, Пошёл ты нахуй" sin ofender, no dire nombres pero
+                (geneesis,ivan,ledier) you can suck my dick 
             </p>
             
             <div class="instruction">
@@ -182,15 +183,15 @@
         </div>
         
         <div class="footer">
-            que we <i class="fas fa-skull" style="color:#ff5d999;"></i> - me aburri e hize esto en el mercado
+            que we <i class="fas fa-skull" style="color:#100;"></i> - me aburri e hize esto en la fila del mercado
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const envelope = document.getElementById('envelope');
-            const message = "XD pendeja";
-            const colors = ['#ffj', '#166b87', '#578fb1', '#ff31c6', '#ff4d877', '#ff6b9d', '#ff8fb1'];
+            const message = "JAJAJAKJA";
+            const colors = ['#fff666', '#500', '#fff690', '#fff1099', '#fff500', '#fff700', '#fff400'];
             
             // Función para crear explosión de letras
             function createExplosion(e) {
@@ -245,7 +246,7 @@
                     const rotation = (Math.random() * 360) - 180;
                     
                     // Duración de animación
-                    const duration = 1000 + Math.random() * 500;
+                    const duration = 15000 + Math.random() * 500;
                     
                     // Animar con JavaScript puro
                     const startTime = Date.now();
@@ -288,6 +289,42 @@
                 envelope.style.transform = 'scale(0.97)';
                 setTimeout(() => {
                     envelope.style.transform = 'scale(1)';
+                }, 150);
+            }
+            
+            // Event listeners para clic y toque
+            envelope.addEventListener('click', createExplosion);
+            envelope.addEventListener('touchstart', function(e) {
+                createExplosion(e);
+            });
+            
+            // También permitir interacción en toda la página
+            document.body.addEventListener('click', function(e) {
+                // Evitar duplicar evento si se hace clic en el sobre
+                if (e.target === envelope || envelope.contains(e.target)) return;
+                createExplosion(e);
+            });
+            
+            document.body.addEventListener('touchstart', function(e) {
+                // Evitar duplicar evento si se toca el sobre
+                if (e.target === envelope || envelope.contains(e.target)) return;
+                createExplosion(e);
+            });
+            
+            // Crear una explosión inicial de bienvenida
+            setTimeout(() => {
+                const initialEvent = {
+                    clientX: window.innerWidth / 2,
+                    clientY: window.innerHeight / 2,
+                    type: 'initial',
+                    touches: [{clientX: window.innerWidth / 2, clientY: window.innerHeight / 2}]
+                };
+                createExplosion(initialEvent);
+            }, 800);
+        });
+    </script>
+</body>
+</html>'scale(1)';
                 }, 150);
             }
             
